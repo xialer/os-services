@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $(dirname $0)/..
+
+rm -rf build dist
+docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}")
+docker system prune -f
